@@ -1,0 +1,6 @@
+#FAQItems			{ margin-top:30px; }
+.FAQItem			{ margin-top:30px; background-color:#FFF; border:1px #e8e8e8 solid; padding:15px; }
+.FAQItem:first-child{ margin-top:0; }
+.FAQQuestion		{ font-size:20px !important; line-height:28px; font-weight:normal !important; display:block; }
+.FAQQuestion:hover	{ text-decoration:none; }
+.FAQAnswerMask		{ height:0px; overflow:hidden; }
