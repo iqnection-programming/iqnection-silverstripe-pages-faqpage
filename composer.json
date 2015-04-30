@@ -2,7 +2,7 @@
 	"name": "iqnection-pages/faqpage",
 	"description": "SilverStripe 3 FAQ Page",
 	"type": "silverstripe-module",
-	"keywords": ["iqnection"],
+	"keywords": ["iqnection","pages"],
 	"authors": [
 		{
 			"name": "IQnection",
