@@ -2,5 +2,8 @@
 # Change Log
 
 
+## [1.0.1]
+- Increased GridField page size to 99 so all entries show on one page
+
 ## [1.0.0]
 - Stable build

@@ -48,7 +48,7 @@
 				new GridFieldAddNewButton('toolbar-header-right'),
 				new GridFieldSortableHeader(),
 				new GridFieldDataColumns(),
-				new GridFieldPaginator(10),
+				new GridFieldPaginator(99),
 				new GridFieldEditButton(),
 				new GridFieldDeleteAction(),
 				new GridFieldDetailForm()				
