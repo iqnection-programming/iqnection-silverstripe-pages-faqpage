@@ -1,6 +1,9 @@
 #FAQItems			{ margin-top:30px; }
-.FAQItem			{ margin-top:30px; background-color:#FFF; border:1px #e8e8e8 solid; padding:15px; }
+.FAQItem			{ margin-top:30px; background-color:#FFF; border:1px #e8e8e8 solid; padding:15px 15px 15px 30px; position:relative; }
 .FAQItem:first-child{ margin-top:0; }
 .FAQQuestion		{ font-size:20px !important; line-height:28px; font-weight:normal !important; display:block; }
-.FAQQuestion:hover	{ text-decoration:none; }
+.FAQQuestion:hover	{ text-decoration:none !important; }
 .FAQAnswerMask		{ height:0px; overflow:hidden; }
+.FAQIcon			{ width:41px; height:41px; background:url(/iq-faqpage/images/faq_icon.png) no-repeat center top; position:absolute; top:-10px; left:-17px; }
+.FAQIcon:hover		{ cursor:pointer; }
+.FAQExpand			{ width:39px; height:11px; background:url(/iq-faqpage/images/faq_expand.png) no-repeat center top; position:absolute; bottom:-5px; left:50%; display:none;  }

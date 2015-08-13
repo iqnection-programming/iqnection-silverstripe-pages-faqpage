@@ -2,6 +2,9 @@
 # Change Log
 
 
+## [1.0.2]
+- Added icon and hover effect to questions
+
 ## [1.0.1]
 - Increased GridField page size to 99 so all entries show on one page
 

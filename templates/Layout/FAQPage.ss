@@ -2,8 +2,9 @@
 $Content
 <% if FAQItems %>
     <div id="FAQItems">
-        <% control FAQItems %>
+        <% loop FAQItems %>
             <div class="FAQItem">
+				<div class="FAQIcon"></div>
                 <a class="FAQQuestion" href="javascript:;">$Question</a>
                 <div class="FAQAnswerMask">
                     <div class="FAQAnswer">
@@ -11,7 +12,8 @@ $Content
                         $Answer
                     </div>
                 </div>
+				<div class="FAQExpand"></div>
             </div><!---FAQItem$Pos-->
-        <% end_control %>
+        <% end_loop %>
     </div><!--FAQItems-->
 <% end_if %>
