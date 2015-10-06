@@ -9,17 +9,35 @@ $(window).load(function(){
 		var is_closed = answer_mask.css('height') == '0px';
 		if(is_closed){
 			answer_mask.animate({
-				height: height_needed
-			}, 500, function() {
-				// Animation complete.
-				tag.css('background-position','center -11px');
+				height: height_needed,
+			}, {	
+				duration:500,
+				complete: function() {
+					// Animation complete.
+					tag.css('background-position','center -11px');
+				},
+				progress: function(){ 
+					fixAllHeights(); 
+					if(typeof FAQonExpand === "function"){
+						FAQonExpand();
+					}
+				}				
 			});
 		} else {
 			answer_mask.animate({
 				height: '0px'
-			}, 500, function() {
-				// Animation complete.
-				tag.css('background-position','center top');
+			}, {	
+				duration:500,
+				complete: function() {
+					// Animation complete.
+					tag.css('background-position','center top');
+				},
+				progress: function(){ 
+					fixAllHeights(); 
+					if(typeof FAQonCollapse === "function"){
+						FAQonCollapse();
+					}
+				}	
 			});
 		}
 	}

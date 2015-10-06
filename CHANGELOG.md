@@ -2,6 +2,9 @@
 # Change Log
 
 
+## [1.0.3]
+- Added JS extendable functionality for collapse and expand
+
 ## [1.0.2]
 - Added icon and hover effect to questions
 
