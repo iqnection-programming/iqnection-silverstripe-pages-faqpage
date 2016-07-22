@@ -57,10 +57,10 @@ class FAQPage extends Page
 			'FAQItems', 
 			'FAQ Items', 
 			$this->FAQItems(), 
-			GridFieldConfig_RecordEditor::create()->addComponents(				
-				new GridFieldSortableRows('SortOrder'),
-				new GridFieldPaginator(99)
+			$config = GridFieldConfig_RecordEditor::create()->addComponents(				
+				new GridFieldSortableRows('SortOrder')
 		)));
+		$config->getComponentByType('GridFieldPaginator')->setItemsPerPage(99);
 		$this->extend('updateCMSFields',$fields);
 		return $fields;
 	}
