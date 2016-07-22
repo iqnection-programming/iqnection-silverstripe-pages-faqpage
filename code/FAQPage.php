@@ -1,78 +1,75 @@
 <?php
-	class FAQItem extends DataObject
+
+class FAQItem extends DataObject
+{
+	private static $db = array( 
+		"SortOrder" => "Int",
+		"Question" => "Varchar(255)", 
+		"Answer" => "HTMLText" 
+	);
+	
+	private static $has_one = array(
+		"FAQPage" => "FAQPage"
+	); 
+			
+	private static $summary_fields = array(
+		"Question" => "Question"
+	);
+	
+	private static $default_sort = "SortOrder";
+	
+	public function getCMSFields()
 	{
-	    private static $db = array( 
-			"SortOrder" => "Int",
-			"Question" => "Varchar(255)", 
-			"Answer" => "HTMLText" 
-		);
-		
-	    private static $default_sort = "SortOrder";
-		
-	    private static $has_one = array(
-			"FAQPage" => "FAQPage"
-		); 		
-		
-	    public function getCMSFields()
-	    {
-	        return new FieldList(
-				new TextField("Question", "Question:"),
-				new HTMLEditorField("Answer", "Answer:")
-			);
-	    }
-		
-	    private static $summary_fields = array(
-			"Question" => "Question"
-		);
-		
-	    public function canCreate($member = null)
-	    {
-	        return true;
-	    }
-	    public function canDelete($member = null)
-	    {
-	        return true;
-	    }
-	    public function canEdit($member = null)
-	    {
-	        return true;
-	    }
-	    public function canView($member = null)
-	    {
-	        return true;
-	    }
+		$fields = parent::getCMSFields();
+		$fields->push( new HiddenField('SortOrder',null,$fields->dataFieldByName('SortOrder')->Value()) );
+		$this->extend('updateCMSFields',$fields);
+		return $fields;
 	}
 	
-	class FAQPage extends Page
+	public function canCreate($member = null)
 	{
-		
-	    private static $has_many = array(
-			"FAQItems" => "FAQItem"
-		);
-		
-	    public function getCMSFields()
-	    {
-	        $fields = parent::getCMSFields();
-	        $faqs_config = GridFieldConfig::create()->addComponents(				
+		return true;
+	}
+	public function canDelete($member = null)
+	{
+		return true;
+	}
+	public function canEdit($member = null)
+	{
+		return true;
+	}
+	public function canView($member = null)
+	{
+		return true;
+	}
+}
+
+class FAQPage extends Page
+{
+	private static $has_many = array(
+		"FAQItems" => "FAQItem"
+	);
+	
+	public function getCMSFields()
+	{
+		$fields = parent::getCMSFields();
+		$fields->addFieldToTab('Root.FAQItems', new GridField(
+			'FAQItems', 
+			'FAQ Items', 
+			$this->FAQItems(), 
+			GridFieldConfig_RecordEditor::create()->addComponents(				
 				new GridFieldSortableRows('SortOrder'),
-				new GridFieldToolbarHeader(),
-				new GridFieldAddNewButton('toolbar-header-right'),
-				new GridFieldSortableHeader(),
-				new GridFieldDataColumns(),
-				new GridFieldPaginator(99),
-				new GridFieldEditButton(),
-				new GridFieldDeleteAction(),
-				new GridFieldDetailForm()				
-			);
-	        $fields->addFieldToTab('Root.Content.FAQItems', new GridField('FAQItems', 'FAQ Items', $this->FAQItems(), $faqs_config));
-	        return $fields;
-	    }
+				new GridFieldPaginator(99)
+		)));
+		$this->extend('updateCMSFields',$fields);
+		return $fields;
 	}
-	
-	class FAQPage_Controller extends Page_Controller
+}
+
+class FAQPage_Controller extends Page_Controller
+{
+	public function init()
 	{
-	    public function init()
-	    {
-	        parent::init();
-	    }
+		parent::init();
 	}
+}

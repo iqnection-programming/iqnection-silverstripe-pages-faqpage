@@ -2,6 +2,10 @@
 # Change Log
 
 
+## [1.0.4]
+- Removed Depreciated parts
+- Made admin forms extendable
+
 ## [1.0.3]
 - Added JS extendable functionality for collapse and expand
 
