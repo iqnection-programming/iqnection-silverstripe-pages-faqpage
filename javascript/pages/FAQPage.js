@@ -1,12 +1,10 @@
-$(window).load(function(){
-	$('.FAQQuestion').click(clickHander);
-	$('.FAQIcon').click(clickHander);
-	
-	function clickHander(event){
-		var tag = $(this).parent().children('.FAQExpand');
-		var answer_mask = $(this).parent().children('.FAQAnswerMask');
-		var height_needed = $(this).parent().children('.FAQAnswerMask').children('.FAQAnswer').css('height');
-		var is_closed = answer_mask.css('height') == '0px';
+(function($){
+	"use strict";
+	function faqClickHander(){
+		var tag = $(this).parent().children('.faq-expand');
+		var answer_mask = $(this).parent().children('.faq-answer-mask');
+		var height_needed = $(this).parent().find('.faq-answer').css('height');
+		var is_closed = answer_mask.css('height') === '0px';
 		if(is_closed){
 			answer_mask.animate({
 				height: height_needed,
@@ -18,8 +16,8 @@ $(window).load(function(){
 				},
 				progress: function(){ 
 					fixAllHeights(); 
-					if(typeof FAQonExpand === "function"){
-						FAQonExpand();
+					if(typeof FaqOnExpand === "function"){
+						FaqOnExpand();
 					}
 				}				
 			});
@@ -34,33 +32,37 @@ $(window).load(function(){
 				},
 				progress: function(){ 
 					fixAllHeights(); 
-					if(typeof FAQonCollapse === "function"){
-						FAQonCollapse();
+					if(typeof FaqOnCollapse === "function"){
+						FaqOnCollapse();
 					}
 				}	
 			});
 		}
 	}
-	
-	$('.FAQQuestion').hover(
-		function(){
-			var tag = $(this).parent().children('.FAQExpand');
-			tag.show();
-		},
-		function(){
-			var tag = $(this).parent().children('.FAQExpand');
-			tag.hide();
-		}
-	);
-	
-	$('.FAQIcon').hover(
-		function(){
-			var tag = $(this).parent().children('.FAQExpand');
-			tag.show();
-		},
-		function(){
-			var tag = $(this).parent().children('.FAQExpand');
-			tag.hide();
-		}
-	);
-});
+	$(window).load(function(){
+		$('.faq-question').click(faqClickHander);
+		$('.faq-icon').click(faqClickHander);
+		
+		$('.faq-question').hover(
+			function(){
+				var tag = $(this).parent().children('.faq-expand');
+				tag.show();
+			},
+			function(){
+				var tag = $(this).parent().children('.faq-expand');
+				tag.hide();
+			}
+		);
+		
+		$('.faq-icon').hover(
+			function(){
+				var tag = $(this).parent().children('.faq-expand');
+				tag.show();
+			},
+			function(){
+				var tag = $(this).parent().children('.faq-expand');
+				tag.hide();
+			}
+		);
+	});
+}(jQuery));

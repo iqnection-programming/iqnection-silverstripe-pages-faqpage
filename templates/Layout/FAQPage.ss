@@ -1,19 +1,9 @@
 <h1>$Title</h1>
 $Content
-<% if FAQItems %>
-    <div id="FAQItems">
-        <% loop FAQItems %>
-            <div class="FAQItem">
-				<div class="FAQIcon"></div>
-                <a class="FAQQuestion" href="javascript:;">$Question</a>
-                <div class="FAQAnswerMask">
-                    <div class="FAQAnswer">
-                        <br />
-                        $Answer
-                    </div>
-                </div>
-				<div class="FAQExpand"></div>
-            </div><!---FAQItem$Pos-->
+<% if $FaqItems.Count %>
+    <div id="faq-items">
+        <% loop $FaqItems %>
+            <% include FaqItem %>
         <% end_loop %>
-    </div><!--FAQItems-->
+    </div><!--faq-items-->
 <% end_if %>

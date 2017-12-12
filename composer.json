@@ -1,6 +1,6 @@
 {
 	"name": "iqnection-pages/faqpage",
-	"description": "SilverStripe 3 FAQ Page",
+	"description": "SilverStripe FAQ Page",
 	"type": "silverstripe-module",
 	"keywords": ["iqnection","pages"],
 	"authors": [
@@ -10,8 +10,8 @@
 		}
 	],
 	"require": {
-		"silverstripe/framework": ">=3.0",
-		"iqnection-pages/basepages":"*"
+		"silverstripe/framework": "4.*",
+		"iqnection-pages/basepages":"2.*"
 	},
 	"extra": {
 		"installer-name": "iq-faqpage"
