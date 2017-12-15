@@ -3,6 +3,7 @@
 	"description": "SilverStripe FAQ Page",
 	"type": "silverstripe-module",
 	"keywords": ["iqnection","pages"],
+	"license": "BSD-3-Clause",
 	"authors": [
 		{
 			"name": "IQnection",
