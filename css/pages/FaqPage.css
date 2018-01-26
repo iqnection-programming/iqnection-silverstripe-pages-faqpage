@@ -1,10 +1,10 @@
 #faq-items								{ margin-top:30px; clear:both; }
-.faq-item								{ margin-top:30px; background-color:#FFF; border:1px #e8e8e8 solid; padding:15px 15px 15px 30px; position:relative; }
+.faq-item								{ margin:30px 10px 0; background-color:#FFF; border:1px #e8e8e8 solid; padding:15px 15px 15px 30px; position:relative; }
 .faq-item:first-child					{ margin-top:0; }
 .faq-question							{ font-size:20px !important; line-height:28px; font-weight:normal !important; display:block; }
 .faq-question:hover						{ text-decoration:none !important; }
 .faq-answer-mask						{ height:0px; overflow:hidden; }
-.faq-icon								{ width:40px; height:40px; position:absolute; top:-10px; left:-17px; }
+.faq-icon								{ width:35px; height:35px; position:absolute; top:-10px; left:-17px; }
 .faq-icon svg							{ display:block; width:100%; overflow:visible; }
 .faq-icon:hover							{ cursor:pointer; }
 .faq-icon-bg							{ fill:#FFFFFF; stroke:#4A69FF; stroke-width:15; stroke-miterlimit:10; }
