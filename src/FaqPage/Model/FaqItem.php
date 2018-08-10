@@ -1,10 +1,14 @@
 <?php
 
+namespace IQnection\FaqPage\Model;
+
 use SilverStripe\ORM;
 use SilverStripe\Forms;
 
 class FaqItem extends ORM\DataObject
 {
+	private static $table_name = 'FaqItem';
+	
 	private static $db = array( 
 		"SortOrder" => "Int",
 		"Question" => "Varchar(255)", 
@@ -12,7 +16,7 @@ class FaqItem extends ORM\DataObject
 	);
 	
 	private static $has_one = array(
-		"FaqPage" => "FaqPage"
+		"FaqPage" => \IQnection\FaqPage\FaqPage::class
 	); 
 			
 	private static $summary_fields = array(

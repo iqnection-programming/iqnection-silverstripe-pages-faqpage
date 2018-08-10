@@ -1,6 +1,9 @@
 ## Package: iqnection-silverstripe-3-pages-faqpage
 # Change Log
 
+## [2.1.0]
+- updated to follow SS 4.1 /public/ directory structure
+
 ## [2.0.0]
 - update for SilverStripe 4
 

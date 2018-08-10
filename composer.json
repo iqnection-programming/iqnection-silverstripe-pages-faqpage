@@ -11,10 +11,19 @@
 		}
 	],
 	"require": {
-		"silverstripe/framework": "4.*",
-		"iqnection-pages/basepages":"2.*"
+		"silverstripe/framework": "^4.0",
+		"iqnection-pages/basepages":"^2.1"
 	},
 	"extra": {
-		"installer-name": "iq-faqpage"
+		"expose": [
+			"css",
+			"images",
+			"javascript"
+		]
+	},
+	"autoload": {
+		"psr-4": {
+			"IQnection\\FaqPage\\": "app/src/"
+		}
 	}
 }

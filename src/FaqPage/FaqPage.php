@@ -1,12 +1,16 @@
 <?php
 
+namespace IQnection\FaqPage;
+
 use SilverStripe\Forms;
 use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 
-class FaqPage extends Page
+class FaqPage extends \Page
 {
+	private static $table_name = 'FaqPage';
+	
 	private static $has_many = array(
-		"FaqItems" => "FaqItem"
+		"FaqItems" => Model\FaqItem::class
 	);
 	
 	public function getCMSFields()
