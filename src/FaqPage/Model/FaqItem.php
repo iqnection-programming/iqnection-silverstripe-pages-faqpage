@@ -25,6 +25,16 @@ class FaqItem extends ORM\DataObject
 	
 	private static $default_sort = "SortOrder";
 	
+	private static $indexes = [
+		'SearchFields' => [
+			'type' => 'fulltext',
+			'columns' => [
+				'Question',
+				'Answer'
+			]
+		]
+	];
+	
 	public function getCMSFields()
 	{
 		$fields = parent::getCMSFields();
